@@ -1,8 +1,8 @@
 {
-  "name": "algorithm-problems",
+  "name": "algorithm-js",
   "private": true,
   "scripts": {
-    "start": "mocha src/leetcode/*.js src/programmers/*.js"
+    "test": "mocha src/leetcode/*.js src/programmers/*.js"
   },
   "devDependencies": {
     "chai": "^4.2.0",

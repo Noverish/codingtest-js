@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17686 - 파일명 정렬";
-
 const inputs = [
   ['img12.png', 'img10.png', 'img02.png', 'img1.png', 'IMG01.GIF', 'img2.JPG'],
   ['F-5 Freedom Fighter', 'B-50 Superfortress', 'A-10 Thunderbolt II', 'F-14 Tomcat'],
@@ -33,7 +31,7 @@ function main(files) {
   return files;
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.deepEqual(main(input), outputs[i]);

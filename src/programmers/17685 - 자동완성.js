@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17685 - 자동완성";
-
 const inputs = [
   ['go', 'gone', 'guild'],
   ['abc', 'def', 'ghi', 'jklm'],
@@ -73,7 +71,7 @@ function main(words) {
   return tmp.reduce((a, b) => a + b, 0);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

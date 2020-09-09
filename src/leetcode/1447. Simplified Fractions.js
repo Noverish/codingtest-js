@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "1447. Simplified Fractions";
-
 const inputs = [1, 2, 3, 4];
 
 const outputs = [
@@ -38,7 +36,7 @@ function main(n) {
   return result.sort();
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input), () => {
       assert.deepEqual(main(input), outputs[i]);

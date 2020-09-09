@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17683 - 방금그곡";
-
 const inputs = [
   ['ABCDEFG', ['12:00,12:14,HELLO,CDEFGAB', '13:00,13:05,WORLD,ABCDEF']],
   ['CC#BCC#BCC#BCC#B', ['03:00,03:30,FOO,CC#B', '04:00,04:08,BAR,CC#BCC#BCC#B']],
@@ -54,7 +52,7 @@ function main([m, musicinfos]) {
   return tmp[0][0];
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

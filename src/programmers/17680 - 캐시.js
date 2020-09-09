@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17680 - 캐시";
-
 const inputs = [
   [3, ['Jeju', 'Pangyo', 'Seoul', 'NewYork', 'LA', 'Jeju', 'Pangyo', 'Seoul', 'NewYork', 'LA']],
   [3, ['Jeju', 'Pangyo', 'Seoul', 'Jeju', 'Pangyo', 'Seoul', 'Jeju', 'Pangyo', 'Seoul']],
@@ -38,7 +36,7 @@ function main([cacheSize, cities]) {
   return result.reduce((a, b) => a + b, 0);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

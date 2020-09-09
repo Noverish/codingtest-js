@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17679 - 프렌즈4블록";
-
 const inputs = [
   [4, 5, ['CCBDE', 'AAADE', 'AAABF', 'CCBBF']],
   [6, 6, ['TTTANT', 'RRFACC', 'RRRFCC', 'TRRRAA', 'TTMMMF', 'TMMTTJ']],
@@ -60,7 +58,7 @@ function main([m, n, board]) {
   return result;
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

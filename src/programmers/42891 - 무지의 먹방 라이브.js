@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "42891 - 무지의 먹방 라이브";
-
 const inputs = [
   [[3, 1, 2], 5],
   [[1, 2, 4, 4, 5, 4, 5], 12],
@@ -62,7 +60,7 @@ function main([food_times, k]) {
   }
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

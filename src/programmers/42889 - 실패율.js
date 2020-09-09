@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "42889 - 실패율";
-
 const inputs = [
   [5, [2, 1, 2, 6, 2, 4, 3, 3]],
   [4, [4, 4, 4, 4, 4]],
@@ -26,7 +24,7 @@ function main([N, stages]) {
   return status2.map(v => v.stage);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.deepEqual(main(input), outputs[i]);

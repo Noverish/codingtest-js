@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "42888 - 오픈채팅방";
-
 const inputs = [
   ["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]
 ];
@@ -31,7 +29,7 @@ function main(record) {
   }).filter(v => v !== undefined);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.deepEqual(main(input), outputs[i]);

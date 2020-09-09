@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "462. Minimum Moves to Equal Array Elements II";
-
 const inputs = [
   [1, 2, 3],
   [1, 0, 0, 8, 6],
@@ -19,7 +17,7 @@ function main(nums) {
   return nums.reduce((v1, v2) => v1 + Math.abs(v2 - target), 0);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input), () => {
       assert.equal(main(input), outputs[i]);

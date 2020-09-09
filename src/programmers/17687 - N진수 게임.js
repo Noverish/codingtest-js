@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17687 - N진수 게임";
-
 const inputs = [
   [2, 4, 2, 1],
   [16, 16, 2, 1],
@@ -24,7 +22,7 @@ function main([n, t, m, p]) {
   return str.split('').filter((v, i) => i % m === p - 1).join('').slice(0, t).toUpperCase();
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

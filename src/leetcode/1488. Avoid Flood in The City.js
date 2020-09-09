@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "1488. Avoid Flood in The City";
-
 const inputs = [
   [1, 2, 3, 4],
   [1, 2, 0, 0, 2, 1],
@@ -120,7 +118,7 @@ function main(rains) {
   // return result.map(v => (v === undefined) ? 1 : v);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input), () => {
       assert.deepEqual(main(input), outputs[i]);

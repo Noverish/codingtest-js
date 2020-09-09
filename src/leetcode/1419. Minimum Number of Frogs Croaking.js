@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "1419. Minimum Number of Frogs Croaking";
-
 const inputs = [
   'croakcroak',
   'crcoakroak',
@@ -50,7 +48,7 @@ function main(croakOfFrogs) {
   return maxFrog;
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input), () => {
       assert.equal(main(input), outputs[i]);

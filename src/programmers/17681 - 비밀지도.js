@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17681 - 비밀지도";
-
 const inputs = [
   [5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]],
   [6, [46, 33, 33 ,22, 31, 50], [27 ,56, 19, 14, 14, 10]],
@@ -31,7 +29,7 @@ function main([n, arr1, arr2]) {
   return newArr2;
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.deepEqual(main(input), outputs[i]);

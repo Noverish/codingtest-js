@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17676 - 추석 트래픽";
-
 const inputs = [
   [
     "2016-09-15 01:00:04.001 2.0s",
@@ -67,7 +65,7 @@ function main(lines) {
   return max;
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

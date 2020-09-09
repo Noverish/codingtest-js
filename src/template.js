@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "title";
-
 const inputs = [
   
 ];
@@ -14,7 +12,7 @@ function main(params) {
   
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

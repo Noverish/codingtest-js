@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17677 - 뉴스 클러스터링";
-
 const inputs = [
   ['FRANCE', 'french'],
   ['handshake', 'shake hands'],
@@ -96,7 +94,7 @@ function main([str1, str2]) {
   return Math.floor(intersection.length / union.length * 65536);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

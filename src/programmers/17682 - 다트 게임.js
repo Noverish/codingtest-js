@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17682 - 다트 게임";
-
 const inputs = [
   '1S2D*3T',
   '1D2S#10S',
@@ -59,7 +57,7 @@ function main(dartResult) {
   return result2.reduce((a, b) => a + b, 0);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

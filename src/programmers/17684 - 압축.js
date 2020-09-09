@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17684 - 압축";
-
 const inputs = [
   'KAKAO',
   'TOBEORNOTTOBEORTOBEORNOT',
@@ -41,7 +39,7 @@ function main(msg) {
   return result;
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.deepEqual(main(input), outputs[i]);

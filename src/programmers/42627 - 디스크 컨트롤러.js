@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "42627 - 디스크 컨트롤러";
-
 const inputs = [
   [[0, 3], [1, 9], [2, 6]]
 ];
@@ -48,7 +46,7 @@ function main(jobs) {
   return Math.floor(result / length);
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

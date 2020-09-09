@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "42895 - N으로 표현";
-
 const inputs = [
   [5, 12],
   [2, 11]
@@ -58,7 +56,7 @@ function main([N, number]) {
   return -1;
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);

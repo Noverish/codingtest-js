@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 
-const title = "17678 - 셔틀버스";
-
 const inputs = [
   [1, 1, 5, ['08:00', '08:01', '08:02', '08:03']],
   [2, 10, 2, ['09:10', '09:09', '08:00']],
@@ -58,7 +56,7 @@ function main([n, t, m, timetable]) {
   }
 }
 
-describe(title, () => {
+describe(__filename.split('/').pop().replace('.js', ''), () => {
   inputs.forEach((input, i) => {
     it(JSON.stringify(input).substr(0, 50), () => {
       assert.equal(main(input), outputs[i]);
