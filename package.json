@@ -1,5 +1,5 @@
 {
-  "name": "algorithm-js",
+  "name": "codingtest-js",
   "private": true,
   "scripts": {
     "test": "mocha src/leetcode/*.js src/programmers/*.js"
