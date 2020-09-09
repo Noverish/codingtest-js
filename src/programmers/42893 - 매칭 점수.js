@@ -13,14 +13,14 @@ function main([word, pages]) {
   const status = {};
 
   pages.forEach((page, i) => {
-    const urlRegex = /<meta property="og:url" content="https:\/\/([^"]+)"\/>/g;
+    const urlRegex = /<meta property="og:url" content="(\S+)"\/>/g;
     const url = page.match(urlRegex)[0].replace(urlRegex, "$1");
 
-    const linksRegex = /<a href="https:\/\/([^"]+)">/g;
+    const linksRegex = /<a href="(\S+)">/g;
     const links = (page.match(linksRegex) || []).map(v => v.replace(linksRegex, "$1"));
 
     const content = page.replace(/[^a-zA-Z]+/g, ' ');
-    const wordRegex = new RegExp(word, 'ig');
+    const wordRegex = new RegExp(`\\b${word}\\b`, 'ig');
     const words = content.match(wordRegex) || [];
 
     status[url] = {
